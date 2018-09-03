@@ -13,8 +13,7 @@ public class Question1 {
 		
 		/* Loops through vector, checks if the number has been seen before
 		 * if it hasn't, then it's added to the total and HashSet. If it has,
-		 * then nothing happens
-		 */
+		 * then nothing happens */
 		for (int i = 0; i < numbers.length; i++) {
 			int num = numbers[i];
 			if (h.contains(num) == false) {

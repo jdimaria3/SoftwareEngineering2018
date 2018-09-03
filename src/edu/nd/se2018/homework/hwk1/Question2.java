@@ -13,10 +13,10 @@ public class Question2 {
 		
 		HashMap<String,Integer> h = new HashMap<String,Integer>();
 		
-		/* Splits the main input into a String array */
+		// Splits the main input into a String array
 		String[] in = input.split(" ");
 		
-		/* Splits the stopwords into a String array */
+		// Splits the stopwords into a String array
 		String[] stops = stopwords.split(" ");
 		
 		/* Loops through every word in the input and, if it's not a stopword,
@@ -40,7 +40,7 @@ public class Question2 {
 		 * In the loop, every entry in the HashMap is checked. If the occurrence is
 		 * more than the current max, its value is recorded. If it's equal, that means
 		 * there's more than one word with that occurrence, and the value is reset.
-		 * Lastly, if it's less than the current max, then it is ignored. */
+		 * If it's less than the current max, then it is ignored. */
 		int maxOcc = 0;
 		String maxWord = null;
 		

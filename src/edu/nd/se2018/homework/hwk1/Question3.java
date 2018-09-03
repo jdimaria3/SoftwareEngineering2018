@@ -6,11 +6,12 @@ public class Question3 {
     public int getMirrorCount(int[] numbers){
     	
     	int len = numbers.length;
-        int max = 0;
         
-        /* Returns 0 if numbers is an empty set */
+        // Returns 0 if numbers is an empty set
         if (len == 0)
-            return max;
+            return 0;
+        
+        int max = 0;
         
         /* Loops through every value in the set, using each as the "starting point"
          * of the mirror check */
@@ -32,7 +33,6 @@ public class Question3 {
                 count++;
             }
 
-            /* Updates the max mirror size */
             if (count > max) {
             	max = count;
             }
