@@ -38,6 +38,7 @@ public class MapBuilder {
 		gates.put("Gate2", new CrossingGate(380,480, "Gate2"));		
 	}
 	
+	//Creates both tracks, with one slightly lower than the other
 	private void buildTracks(){
 		tracks.put("Royal", new RailwayTracks(new Point(0,500),new Point(1200,500)));
 		tracks.put("Royal2", new RailwayTracks(new Point(0,525),new Point(1200,525)));

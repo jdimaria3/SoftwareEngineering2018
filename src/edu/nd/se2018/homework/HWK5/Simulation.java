@@ -40,7 +40,7 @@ public class Simulation extends Application{
 		stage.setScene(scene);
 		stage.show();
 				
-		// Trains
+		// References both tracks and creates both the West to East and East to West trains
 		RailwayTracks track = mapBuilder.getTrack("Royal");
 		Train train = new Train(track.getEndX()+100,track.getEndY()-25, "west");
 		root.getChildren().add(train.getImageView());
@@ -49,6 +49,7 @@ public class Simulation extends Application{
 		Train train2 = new Train(track2.getStartX()-150,track2.getEndY()+5, "east");
 		root.getChildren().add(train2.getImageView());
 		
+		//Makes both gates observe both trains
 		for(CrossingGate gate: mapBuilder.getAllGates()) {
 			train.addObserver(gate);
 			train2.addObserver(gate);
