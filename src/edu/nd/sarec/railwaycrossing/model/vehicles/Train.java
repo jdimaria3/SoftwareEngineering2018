@@ -20,6 +20,7 @@ public class Train extends Observable implements IVehicle{
 	private int trainLength = 35;
 	private String direction;
 	
+	//Added a direction variable, works properly for both "east" and "west"
 	public Train(int x, int y, String dir){
 		this.currentX = x;
 		this.currentY = y;
@@ -39,6 +40,8 @@ public class Train extends Observable implements IVehicle{
 		return currentY;
 	}
 	
+	//If statement checks on the direction of the train and updates the 
+	//x coordinate appropriately
 	public void move(){
 		if (direction == "west") {
 			currentX-=2;
@@ -51,6 +54,8 @@ public class Train extends Observable implements IVehicle{
 		notifyObservers();
 	}
 	
+	//If statement checks on the direction of the train and determines
+	//whether the train is off screen appropriately
 	public boolean offScreen(){
 		if (currentX < -200 && direction == "west")
 			return true;
