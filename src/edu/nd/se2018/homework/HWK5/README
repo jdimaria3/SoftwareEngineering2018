@@ -1,0 +1,43 @@
+README
+
+1. Reflect on any design changes you made and write a paragraph or two explaining how you approached the design
+process, and ultimately what you liked and didn’t like about your decisions. As in my original design, the quality of
+your design will be a tradeoff against the time you have and the extent to which you engage in upfront design
+versus incremental design. You will NOT lose points for pointing out things that you would like to improve in your
+design – this is all part of the reflective design process. (5 points)
+
+
+I was only able to more or less successfully do Part 1 of this assignment. I successfully added a second track, added a
+train moving from west to east, and have the gates observing it and closing accordingly. There is some kind of bug where
+it seems as though the gates respond to the west to east train both entering and leaving, and the east to west train
+leaving, but not the east to west train entering. I believe this could be fixed by adding a train factory similar to the 
+car factory, but I was not able to figure this out in time for the deadline (I again had time management issues and that
+is clearly an issue I need to work on for future assignments). However, aside from the east to west train not being
+detected when it enters, part 1 should be successfully working. 
+
+To implement these changes, I added a new train in the simulation class, and added references to that second train to 
+implement its functionality in the addObserver for loop and AnimationTimer function. I created the second track in the 
+MapBuilder class, and added checks for the direction of the train in the Train class. I had to experiment with values
+in Simulation and MapBuilder to get a reasonable placement for the train and track, respectively. If I had given myself 
+more time, I would have liked to be able to created a TrainFactory class so that the gates could reference all trains
+at once, rather than one at a time as it seems to be doing right now. I liked the way I changed the train class to allow
+for movement in the opposite direction by simply passing it an "east" or "west" value in the constructor, and the way I 
+implemented that movement in the relevant functions. 
+
+
+2. In preparation for our future architectural focus, imagine that Mayor Buttigieg wants to build a simulation of traffic
+in South Bend and he asks if he can use your design – discuss whether your design (as-is) would scale up or not. List
+specific aspects that you think wouldn’t scale well. (5 points)
+
+
+As is, I don't think my design would scale well. While the code has random speed cars and trains in multiple directions, 
+I feel like adding numerous roads (both parallel and perpendicular to the other roads) would be a difficult task to 
+adequately implement, particularly perpendicular tracks. However, if both a car and train factory was implemented, with all
+gates observing trains in the train factory, then it may scale up better. Further, roads and tracks in real life are not
+purely straight horizontal and vertical lines; many roads curve. I think some kind of curved road or track would be really 
+hard to  properly implement drawing methods for, though theoretically with well functioning train and car factory classes, 
+and gates that observe the trains properly, then having that code scale should be feasible.
+
+
+Note: I only submitted the files in my HWK5 directory that I edited. They won't run on their own as they depend on all the
+other files, but you should be able to replace the originals with mine to see the functionality that I added.
